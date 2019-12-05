@@ -77,14 +77,18 @@ WSGI_APPLICATION = 'django_accounts.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'anything.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'accounts',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': '',
+        'PORT': '',
     }
 }
+
+
 
 
 # Password validation
@@ -133,5 +137,5 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-LOGIN_REDIRECT_URL = "test"
-LOGOUT_REDIRECT_URL = "thanks"
+LOGIN_REDIRECT_URL = "accounts:detail"
+LOGOUT_REDIRECT_URL = "accounts:thanks"

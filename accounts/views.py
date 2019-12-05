@@ -22,3 +22,15 @@ def signup(request):
     else:
         form = UserCreateForm()
     return render(request, 'accounts/signup.html', {'form': form})
+
+
+from django.views.generic import TemplateView
+
+class Detail(TemplateView):
+    template_name = 'accounts/detail.html'
+
+class Thanks(TemplateView):
+    template_name = 'accounts/thanks.html'
+
+class Home(TemplateView):
+    template_name = "accounts/home.html"

@@ -2,20 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Django_users</title>
+    <title>SCS-version3.01</title>
 
   </head>
 
 
-  <body>
+<body>
 
-    <nav class="navbar  mynav" role="navigation" id="navbar">
-    			<div class="container">
-  {% block content %}
+<nav class="navbar  mynav" role="navigation" id="navbar">
+    <div class="container">
+    {% block content %}
 
-          {% endblock %}
+    {% endblock %}
 
-            <a class="navbar-brand mynav" href="{% url 'home' %}">USERS</a>
+            <a class="navbar-brand mynav" href="{% url 'accounts:home' %}">USERS</a>
 
     					<ul class="nav navbar-nav navbar-right">
     						{% if user.is_authenticated %}
