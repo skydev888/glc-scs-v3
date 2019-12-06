@@ -1,0 +1,7 @@
+Dev record
+
+
+    Heroku configlation:    https://github.com/somyasj123/django_projects
+    Base CRUD:              https://it-engineer-lab.com/archives/402
+
+    GoogleTranslate:        https://qiita.com/maboy/items/9a1336ece11db4630858
