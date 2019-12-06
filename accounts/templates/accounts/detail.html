@@ -2,6 +2,37 @@
 {% block content %}
 <div class="container">
   <h1>You are now logged in!</h1>
+
+    <h1>DetailView詳細画面</h1>
+    <table border="1">
+        <tr>
+            <th>name</th>
+            <th>nickname</th>
+            <th>age</th>
+        </tr>
+        <tr>
+          <td>First Name :{{ user.first_name }}</td>
+          <td>Last Name :{{ user.last_name }}</td>
+          <td>Age :{{ user.userprofile.age }}</td>
+          <td>Degree :{{ user.userprofile.degree }}</td>
+          <td>Email Address :{{ user.email }}</td>
+          <td>City :{{ user.userprofile.city }}</td>
+          <td>State :{{ user.userprofile.state }}</td>
+          <td>Country :{{ user.userprofile.country }}</td>
+        </tr>
+    </table>
+
+</html>
+
+
+
+
+
+
+
+
+
+
 </div>
 
 

@@ -1,5 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>home. scs-version3.01</h1>
 
+<h1>Home</h1>
+        <div class="row">
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                    <h1>Here is your profile information</h1>
+                    <ul>
+                        <li>First Name :{{ user.first_name }}</li>
+                        <li>Last Name :{{ user.last_name }}</li>
+                        <li>Age :{{ user.userprofile.age }}</li>
+                        <li>Degree :{{ user.userprofile.degree }}</li>
+                        <li>Email Address :{{ user.email }}</li>
+                        <li>City :{{ user.userprofile.city }}</li>
+                        <li>State :{{ user.userprofile.state }}</li>
+                        <li>Country :{{ user.userprofile.country }}</li>
+                    </ul>
+                      <li><a href="{% url 'accounts:update' user.userprofile.pk %}" class="btn btn-simple">Edit</a></li>
+                      <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">Log out</a></li>
+                {% else %}
+                      <p>LET'S GO TO SWISS!!¥</p>
+                {% endif %}
+            </ul>
+        </div>
 {% endblock %}

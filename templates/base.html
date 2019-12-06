@@ -1,50 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>SCS-version3.01</title>
-
-  </head>
+</head>
 
 
 <body>
-
-<nav class="navbar  mynav" role="navigation" id="navbar">
     <div class="container">
-    {% block content %}
+        <h1>SCS-version3.01</h1>
+        <nav class="navbar  mynav" role="navigation" id="navbar">
+        <hr>
+            <a class="navbar-brand mynav" href="{% url 'accounts:home' %}">HOME</a>
+        <hr>
+        </nav>
 
-    {% endblock %}
+        <div class="row">
+            {% block content %}
 
-            <a class="navbar-brand mynav" href="{% url 'accounts:home' %}">USERS</a>
-
-    					<ul class="nav navbar-nav navbar-right">
-    						{% if user.is_authenticated %}
-                                <h1>Here is your profile information</h1>
-                                <ul>
-                                    <li>First Name :{{ user.first_name }}</li>
-                                    <li>Last Name :{{ user.last_name }}</li>
-                                    <li>Age :{{ user.userprofile.age }}</li>
-                                    <li>Degree :{{ user.userprofile.degree }}</li>
-                                    <li>Email Address :{{ user.email }}</li>
-                                    <li>City :{{ user.userprofile.city }}</li>
-                                    <li>State :{{ user.userprofile.state }}</li>
-                                    <li>Country :{{ user.userprofile.country }}</li>
-                                </ul>
-
-                                  <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">Log out</a></li>
-    						{% else %}
-    						      <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">Log in</a></li>
-    						      <li><a href="{% url 'accounts:signup' %}" class="btn btn-simple">Sign up</a></li>
-    						{% endif %}
-    					</ul>
-
-
-
-    			</div>
-    		</nav>
-        <div class="container mycontent">
-
+            {% endblock %}
         </div>
-
-  </body>
+    </div>
+</body>
 </html>

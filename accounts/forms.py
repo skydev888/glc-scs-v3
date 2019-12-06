@@ -4,6 +4,7 @@ from django import forms
 from django.contrib.auth.models import User
 
 
+# Singup form
 class UserCreateForm(UserCreationForm):
         username = forms.CharField(max_length=130, required=True , label="Your Username")
         password1 = forms.CharField(widget=forms.PasswordInput(),label="Your Password")
@@ -21,4 +22,5 @@ class UserCreateForm(UserCreationForm):
             model = User
             fields = ("first_name", "last_name", "email", "username", "password1", "password2", "degree", "city",
                       "state", "country", "age")
+
 
