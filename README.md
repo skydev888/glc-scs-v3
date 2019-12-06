@@ -1,2 +1,5 @@
 # SCS-version3.01
-heroku deployment
+
+Implemented:
+-Heroku configuration
+-Base CRUD
