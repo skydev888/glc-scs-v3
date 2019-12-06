@@ -1,5 +1,5 @@
-# SCS-version3.01
+# SCS-version3.01    
 
-Implemented:
--Heroku configuration
--Base CRUD
+Implemented:  
+-Heroku configuration  
+-Base CRUD  
