@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>GoogleTrans test</h1>
+    <div class="row">
+        <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+                <h1>Here is your profile information(TRANSLATED)</h1>
+                <ul>
+                    <li>First Name :{{ user.first_name }}</li>
+                    <li>Last Name :{{ user.last_name }}</li>
+                    <li>Age :{{ user.userprofile.age }}</li>
+                    <li>Degree :{{ user.userprofile.degree }}</li>
+                    <li>Email Address :{{ user.email }}</li>
+                    <li>City :{{ user.userprofile.city }}</li>
+                    <li>State :{{ user.userprofile.state }}</li>
+                    <li>Country :{{ user.userprofile.country }}</li>
+                </ul>
+
+                <h1>TEST(TRANSLATED)</h1>
+                <ul>
+                    <li>Age :{{ accounts.age }}</li>
+                    <li>City :{{ accounts.city }}</li>
+                    <li>State :{{ accounts.state }}</li>
+                    <li>Country :{{ accounts.country }}</li>
+                </ul>
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-8 col-sm-10">
+                        <form method="post">{% csrf_token %}
+                        {{ form.as_p }}
+                        </form>
+                    </div>
+                </div>
+                    <div class="row">
+
+                       <p>age：{{ accounts.age }}</p>
+                       <p>city{{ accounts.city }}</p>
+                       <p>stat:{{ accounts.state }}</p>
+                       <p>country:{{ accounts.country }}</p>
+                    </div>
+                    <div class="row">
+                        <p>国は：{{ accounts.country }}</p>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            {% else %}
+                  <p>NOT LOGGED IN YET!</p>
+            {% endif %}
+        </ul>
+    </div>
+{% endblock %}
