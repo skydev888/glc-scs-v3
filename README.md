@@ -2,4 +2,5 @@
 
 Implemented:  
 -Heroku configuration  
--Base CRUD  
+-Base CRUD
+-merged?  
