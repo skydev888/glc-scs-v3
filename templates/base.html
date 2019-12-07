@@ -14,6 +14,18 @@
             <a class="navbar-brand mynav" href="{% url 'accounts:home' %}">HOME</a>
         <hr>
         </nav>
+        <div class="row">
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                      <li><a href="{% url 'accounts:update' user.userprofile.pk %}" class="btn btn-simple">Edit</a></li>
+                      <li><a href="{% url 'accounts:googletrans' user.userprofile.pk %}" class="btn btn-simple">Googletrans</a></li>
+                      <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">Log out</a></li>
+                {% else %}
+                      <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">Log in</a></li>
+                      <li><a href="{% url 'accounts:signup' %}" class="btn btn-simple">Sign up</a></li>
+                {% endif %}
+            </ul>
+        </div><hr>
 
         <div class="row">
             {% block content %}

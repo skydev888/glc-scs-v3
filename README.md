@@ -3,4 +3,3 @@
 Implemented:  
 -Heroku configuration  
 -Base CRUD
--merged?  

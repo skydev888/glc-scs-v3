@@ -14,6 +14,9 @@ urlpatterns = [
 
     path('update/<int:pk>', views.Update.as_view(), name='update'),
 
+    # google trans test
+    path('googletrans/<int:pk>', views.Googletrans.as_view(), name='googletrans'),
+
 
 
     # path('detail/', views.Detail.as_view(template_name='accounts/detail.html'), name='detail'),  # ログイン後遷移ページとして使用
