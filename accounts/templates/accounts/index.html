@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}
+一覧を表示する予定
+{% endblock title %}
+
+{% block content %}
+<h3>一覧表示</h3>
+
+<a href="{% url 'accounts:add' %}" class="btn btn-primary btn-sm">追加</a>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>氏名</th>
+            <th>E-Mail</th>
+            <th>年齢</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member in members %}
+        <tr>
+            <td>{{ user.userprofile.user_id }}</td>
+            <td><a href="{% url 'accounts:detail' id=member.id %}">{{ user.userprofile.username }}</a></td>
+            <td>{{ user.userprofile.password1 }}</td>
+            <td>{{ user.userprofile.password2 }}</td>
+            <td>{{ user.userprofile.password3 }}</td>
+            <td>{{ user.userprofile.phone }}</td>
+            <td>
+                <a href="{% url 'accounts:edit' id=member.id %}" class="btn btn-primary btn-sm">編集</a>
+                <a href="{% url 'accounts:delete' id=member.id %}" class="btn btn-primary btn-sm" id="btn_del">削除</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<!-- ページネーションをここに入れる -->
+
+{% endblock content %}
+
+<!-- jsを入れる -->
+{% block script %}
+{% endblock %}

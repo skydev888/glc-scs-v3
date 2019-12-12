@@ -5,16 +5,14 @@
     <div class="row">
         <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
-                <h1>Here is your profile information</h1>
+                <h3>User information:</h3>
                 <ul>
-                    <li>First Name :{{ user.first_name }}</li>
-                    <li>Last Name :{{ user.last_name }}</li>
-                    <li>Age :{{ user.userprofile.age }}</li>
-                    <li>Degree :{{ user.userprofile.degree }}</li>
-                    <li>Email Address :{{ user.email }}</li>
-                    <li>City :{{ user.userprofile.city }}</li>
-                    <li>State :{{ user.userprofile.state }}</li>
-                    <li>Country :{{ user.userprofile.country }}</li>
+                    <li>User ID :{{ user.userprofile.user_id }}</li>
+                    <li>First Name :{{ user.username }}</li>
+                    <li>Password1 :{{ user.userprofile.password1 }}</li>
+                    <li>Password2 :{{ user.userprofile.password2 }}</li>
+                    <li>Password3 :{{ user.userprofile.password3 }}</li>
+                    <li>Phone :{{ user.userprofile.phone }}</li>
                 </ul>
             {% else %}
                   <p>LET'S GO TO SWISS!!¥</p>

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% block title %}
+ユーザー編集表示予定
+{% endblock title %}
+
+{% block content %}
+<h1>Home</h1>
+    <div class="row">
+        <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+                <h3>User information(編集）:</h3>
+                <form role="form" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <h3>プロフィール変更</h3>
+                  <div>
+                    <label for="user_id">USER ID:</label>
+                    {{ form.user_id }}
+                  </div>
+                  <div>
+                    <label for="password1">PASSWORD1：</label>
+                    {{ form.password1 }}
+                  </div>
+                  <div>
+                    <label for="password2">PASSWORD2：</label>
+                    {{ form.password2 }}
+                  </div>
+                  <div>
+                    <label for="password3">PASSWORD3：</label>
+                    {{ form.password3 }}
+                  </div>
+                  <div>
+                    <label for="phone">PHONE：</label>
+                    {{ form.phone }}
+                  </div>
+                  <div>
+                    <button type="submit">変更</button>
+                  </div>
+                </form>
+
+
+
+
+
+
+
+
+
+
+                <ul>
+                    <li>User ID :{{ user.userprofile.user_id }}</li>
+                    <li>First Name :{{ user.username }}</li>
+                    <li>Password1 :{{ user.userprofile.password1 }}</li>
+                    <li>Password2 :{{ user.userprofile.password2 }}</li>
+                    <li>Password3 :{{ user.userprofile.password3 }}</li>
+                    <li>Phone :{{ user.userprofile.phone }}</li>
+                </ul>
+
+                <ul>
+                    <li>Error message:{{ emform.em.label }}</li>
+                </ul>
+            {% else %}
+                  <p>USER IS NOT LOGGED IN.</p>
+            {% endif %}
+        </ul>
+    </div>
+{% endblock %} endblock %}

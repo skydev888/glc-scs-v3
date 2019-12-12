@@ -18,7 +18,8 @@
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
                       <li><a href="{% url 'accounts:update' user.userprofile.pk %}" class="btn btn-simple">Edit</a></li>
-                      <li><a href="{% url 'accounts:googletrans' user.userprofile.pk %}" class="btn btn-simple">Googletrans</a></li>
+                      <li><a href="{% url 'accounts:edit' user_id=user.userprofile.user_id %}" class="btn btn-primary btn-sm">編集</a></li>
+                      <li><a href="{% url 'accounts:googletrans' %}" class="btn btn-simple">Googletrans</a></li>
                       <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">Log out</a></li>
                 {% else %}
                       <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">Log in</a></li>

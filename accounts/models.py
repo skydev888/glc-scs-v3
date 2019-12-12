@@ -6,11 +6,10 @@ from django.dispatch import receiver
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    age = models.IntegerField(blank=True, null=True)
-    degree = models.CharField(max_length=256, blank=True, null=True)
-    city = models.CharField(max_length=256, blank=True, null=True)
-    state = models.CharField(max_length=256, blank=True, null=True)
-    country = models.CharField(max_length=256, blank=True, null=True)
+    password1 = models.CharField(max_length=256, blank=True, null=True)
+    password2 = models.CharField(max_length=256, blank=True, null=True)
+    password3 = models.CharField(max_length=256, blank=True, null=True)
+    phone = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
         return self.user.username
