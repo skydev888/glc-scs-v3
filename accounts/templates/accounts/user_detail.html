@@ -1,6 +1,6 @@
-{% extends "base.html" %}
+{% extends "accounts/base.html" %}
 {% block content %}
-<h3>ユーザー詳細情報：</h3>
+<h3>ユーザー情報：</h3>
 <table class="table">
     <tbody>
         <tr>
@@ -9,23 +9,23 @@
         </tr>
         <tr>
             <th>USER NAME:</th>
-            <td>{{ user.userprofile.username }}</td>
+            <td>{{ user.username }}</td>
         </tr>
         <tr>
             <th>PASSWORD1:</th>
-            <td>{{ user.userprofile.password1 }}</td>
+            <td>{{ user.password1 }}</td>
         </tr>
         <tr>
             <th>PASSWORD2:</th>
-            <td>{{ user.userprofile.password2 }}</td>
+            <td>{{ user.password2 }}</td>
         </tr>
         <tr>
             <th>PASSWORD3:</th>
-            <td>{{ user.userprofile.password3 }}</td>
+            <td>{{ user.password3 }}</td>
         </tr>
         <tr>
             <th>PHONE:</th>
-            <td>{{ user.userprofile.phone }}</td>
+            <td>{{ user.phone }}</td>
         </tr>
     </tbody>
 </table>

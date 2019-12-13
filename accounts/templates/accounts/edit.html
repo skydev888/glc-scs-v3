@@ -11,33 +11,22 @@
         <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
                 <h3>User information(編集）:</h3>
-                <form role="form" method="post" enctype="multipart/form-data">
-                  {% csrf_token %}
-                  <h3>プロフィール変更</h3>
-                  <div>
-                    <label for="user_id">USER ID:</label>
-                    {{ form.user_id }}
-                  </div>
-                  <div>
-                    <label for="password1">PASSWORD1：</label>
-                    {{ form.password1 }}
-                  </div>
-                  <div>
-                    <label for="password2">PASSWORD2：</label>
-                    {{ form.password2 }}
-                  </div>
-                  <div>
-                    <label for="password3">PASSWORD3：</label>
-                    {{ form.password3 }}
-                  </div>
-                  <div>
-                    <label for="phone">PHONE：</label>
-                    {{ form.phone }}
-                  </div>
-                  <div>
-                    <button type="submit">変更</button>
-                  </div>
+                <form action="" method="POST">
+                    {{ form.non_field_errors }}
+                    <table class="table">
+                        <tbody>
+                            {% for field in form %}
+                                <tr>
+                                    <th><label for="{{ field.id_for_label }}">{{ field.label }}</label></th>
+                                    <td>{{ field }} {{ field.errors }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-success btn-lg" >更新</button>
                 </form>
+{% endblock %}
 
 
 
@@ -55,10 +44,6 @@
                     <li>Password2 :{{ user.userprofile.password2 }}</li>
                     <li>Password3 :{{ user.userprofile.password3 }}</li>
                     <li>Phone :{{ user.userprofile.phone }}</li>
-                </ul>
-
-                <ul>
-                    <li>Error message:{{ emform.em.label }}</li>
                 </ul>
             {% else %}
                   <p>USER IS NOT LOGGED IN.</p>

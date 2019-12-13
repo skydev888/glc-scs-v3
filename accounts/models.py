@@ -6,6 +6,7 @@ from django.dispatch import receiver
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    username = models.CharField(max_length=100, blank=True, null=True)
     password1 = models.CharField(max_length=256, blank=True, null=True)
     password2 = models.CharField(max_length=256, blank=True, null=True)
     password3 = models.CharField(max_length=256, blank=True, null=True)

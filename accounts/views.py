@@ -1,14 +1,18 @@
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, render_to_response, get_object_or_404
+from django.shortcuts import render, redirect, render_to_response, get_object_or_404, resolve_url
 from django.urls import reverse_lazy
+from django.views import generic
 from requests import request
 from accounts.models import UserProfile
-from .forms import UserCreateForm, UserEditForm
+from .forms import UserCreateForm, UserUpdateForm
+from django.contrib.auth import get_user_model
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
 
 
+User = get_user_model()
 
 
 
@@ -19,13 +23,6 @@ def delete(request, id):
     member = get_object_or_404(UserProfile, pk=id)
     member.delete()
     return redirect('accounts:index')
-
-
-
-#詳細表示
-def detail(request, id=id):
-    member = get_object_or_404(UserProfile, pk=id)
-    return render(request, 'accounts/detail.html', {'member':member})
 
 
 #一覧
@@ -45,20 +42,52 @@ class MemberList(ListView):
     paginate_by = 1 #1ページあたりのページ数
 
 
+# # 編集テスト
+# @login_required
+# def edit(request, user_id):
+#     user = get_object_or_404(UserProfile, pk=user_id)
+#     if request.method == "POST":
+#         form = UserEditForm(request.POST, instance=user)
+#         if form.is_valid():
+#             user = form.save(commit=False)
+#             user.userprofile.password1 = form.cleaned_data.get('password1')
+#             user.userprofile.password2 = form.cleaned_data.get('password2')
+#             user.userprofile.password3 = form.cleaned_data.get('password3')
+#             user.userprofile.phone = form.cleaned_data.get('phone')
+#             user.save()
+#             return redirect('login')
+#     else:
+#         form = UserEditForm(request.GET, instance=user)
+#     return render(request, 'accounts/edit.html', {'form': form})
+
+
+# バリデーション・詳細表示・編集更新（テスト）https://narito.ninja/blog/detail/43/
+class OnlyYouMixin(UserPassesTestMixin):
+    raise_exception = True
+
+    def test_func(self):
+        user = self.request.user
+        return user.pk == self.kwargs['pk'] or user.is_superuser
+
+
+class UserDetail(OnlyYouMixin, generic.DetailView):
+    model = UserProfile
+    template_name = 'accounts/detail.html'
+
+
+class UserUpdate(OnlyYouMixin, generic.UpdateView):
+    model = UserProfile
+    form_class = UserUpdateForm
+    template_name = 'accounts/form.html'
+
+    def get_success_url(self):
+        return resolve_url('accounts:detail', pk=self.kwargs['pk'])
 
 
 
 
-# 編集テスト
-@login_required
-def edit(request, user_id):
-    if request.method == 'POST':
-        form = UserEditForm(request.POST)
-        if form.is_valid():
-            form.save()
-    else:
-        form = UserEditForm()
-    return render(request, 'accounts/edit.html', {'form': form})
+
+
 
 
 
@@ -97,6 +126,17 @@ class Thanks(TemplateView):
 # Home処理
 class Home(TemplateView):
     template_name = "accounts/home.html"
+
+
+
+
+
+
+
+
+
+
+
 
 
 # 編集処理

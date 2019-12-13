@@ -1,10 +1,20 @@
 {% extends "base.html" %}
-
 {% block content %}
-
-<form action="" method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Update" />
+<h3>ユーザー情報編集：</h3>
+<h5>以下よりユーザー情報を編集して下さい。</h5>
+<form action="" method="POST">
+    {{ form.non_field_errors }}
+    <table class="table">
+        <tbody>
+            {% for field in form %}
+                <tr>
+                    <th><label for="{{ field.id_for_label }}">{{ field.label }}</label></th>
+                    <td>{{ field }} {{ field.errors }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% csrf_token %}
+    <button type="submit" class="btn btn-success btn-lg" >編集完了</button>
 </form>
-
 {% endblock %}

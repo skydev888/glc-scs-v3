@@ -17,13 +17,14 @@
         <div class="row">
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
-                      <li><a href="{% url 'accounts:update' user.userprofile.pk %}" class="btn btn-simple">Edit</a></li>
-                      <li><a href="{% url 'accounts:edit' user_id=user.userprofile.user_id %}" class="btn btn-primary btn-sm">編集</a></li>
-                      <li><a href="{% url 'accounts:googletrans' %}" class="btn btn-simple">Googletrans</a></li>
-                      <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">Log out</a></li>
+                      <li><a class="nav-item nav-link" href="{% url 'accounts:detail' user.pk %}">ユーザー情報表示</a></li>
+                      <li><a class="nav-item nav-link" href="{% url 'accounts:update' user.pk %}">ユーザー情報編集</a></li>
+
+                           <li><a href="{% url 'accounts:googletrans' %}" class="btn btn-simple">Google翻訳</a></li>
+                      <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">ログアウト</a></li>
                 {% else %}
-                      <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">Log in</a></li>
-                      <li><a href="{% url 'accounts:signup' %}" class="btn btn-simple">Sign up</a></li>
+                      <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">ログイン</a></li>
+                      <li><a href="{% url 'accounts:signup' %}" class="btn btn-simple"></a></li>
                 {% endif %}
             </ul>
         </div><hr>
