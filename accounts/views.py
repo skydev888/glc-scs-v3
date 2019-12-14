@@ -101,6 +101,7 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             user.refresh_from_db()
+            user.userprofile.username = form.cleaned_data.get('username')  # added
             user.userprofile.password1 = form.cleaned_data.get('password1')
             user.userprofile.password2 = form.cleaned_data.get('password2')
             user.userprofile.password3 = form.cleaned_data.get('password3')
@@ -109,6 +110,18 @@ def signup(request):
             password = form.cleaned_data.get('password1')
             user = authenticate(username=user.username, password=password)
             login(request, user)
+
+            # Google翻訳
+            user.refresh_from_db()
+            translator = Translator()
+            translated = translator.translate(user.userprofile.username, src='vi', dest='ja')
+            user.userprofile.username_jp = translated.text
+            user.save()
+            # d = {
+            #     'text': translated_username.text
+            # }
+            # return render(request, 'accounts/googletrans.html', d) # 表示はせずデータベースに登録させる為グレーアウト
+
             return redirect('login')
     else:
         form = UserCreateForm()
@@ -153,7 +166,7 @@ class Update(UpdateView):
 # googletran　メソッド
 from googletrans import Translator
 
-def googletrans():
+def googletrans(request):
 
     translator = Translator()
     translated = translator.translate('Bastian Schweinsteiger', src='de', dest='ja')
