@@ -3,3 +3,4 @@
 Implemented:  
 -Heroku configuration  
 -Base CRUD
+-Googletrans
