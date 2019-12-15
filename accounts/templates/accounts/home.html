@@ -1,22 +1,32 @@
 {% extends "base.html" %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{# Load CSS and JavaScript #}
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Homeホーム</li>
+{% endblock %}
 {% block content %}
-
-<h1>Home</h1>
-    <div class="row">
-        <ul class="nav navbar-nav navbar-right">
-            {% if user.is_authenticated %}
-                <h3>User information:</h3>
+<div class="row">
+    <ul class="nav navbar-nav navbar-right">
+        {% if user.is_authenticated %}
+            <div class="user-info">
+                <h1 style="color:royalblue">ユーザー情報</h1>
                 <ul>
-                    <li>User ID :{{ user.userprofile.user_id }}</li>
-                    <li>First Name :{{ user.username }}</li>
-                    <li>Password1 :{{ user.userprofile.password1 }}</li>
-                    <li>Password2 :{{ user.userprofile.password2 }}</li>
-                    <li>Password3 :{{ user.userprofile.password3 }}</li>
-                    <li>Phone :{{ user.userprofile.phone }}</li>
+                    <li>User ID : {{ user.userprofile.user_id }}</li>
+                    <li>First Name : {{ user.username }}</li>
+                    <li>Password1 : {{ user.userprofile.password1 }}</li>
+                    <li>Password2 : {{ user.userprofile.password2 }}</li>
+                    <li>Password3 : {{ user.userprofile.password3 }}</li>
+                    <li>Phone : {{ user.userprofile.phone }}</li>
                 </ul>
-            {% else %}
-                  <p>LET'S GO TO SWISS!!¥</p>
-            {% endif %}
-        </ul>
-    </div>
+            </div>
+        {% else %}
+            <div class="instruction-msg">
+              <h1 style="color:royalblue">HOME</h1>
+              <h5>Wellcome to SCS-version3.03</h5>
+              <h5>右上より新規登録またはログインを行ってください！</h5>
+            </div>
+        {% endif %}
+    </ul>
+</div>
 {% endblock %}

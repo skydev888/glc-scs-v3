@@ -1,7 +1,12 @@
 {% extends "base.html" %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{# Load CSS and JavaScript #}
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Googletrans翻訳</li>
+{% endblock %}
 {% block content %}
-
-<h1>GoogleTrans test</h1>
+<h1 style="color:royalblue">Googletrans翻訳テスト</h1>
     <div class="row">
         <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}

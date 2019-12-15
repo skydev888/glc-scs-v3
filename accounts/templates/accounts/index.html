@@ -1,4 +1,11 @@
 {% extends "base.html" %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{# Load CSS and JavaScript #}
+{% bootstrap_javascript %}
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Indexインデックス</li>
+{% endblock %}
 
 {% block title %}
 一覧を表示する予定

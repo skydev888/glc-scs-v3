@@ -2,9 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="879ca454-0a0f-4e20-93e0-d02b95ada345" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/googletrans.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/googletrans.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/thanks.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/thanks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/user_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/user_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_accounts/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_accounts/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +62,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../django_projects" />
@@ -57,6 +72,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/img" />
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/static/js" />
+      <recent name="$PROJECT_DIR$/static/css" />
       <recent name="$PROJECT_DIR$/accounts/templates/accounts" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -135,10 +154,11 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="192" y="23" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1575949690654" />
-    <state x="286" y="194" key="com.intellij.ide.util.TipDialog" timestamp="1576115203814">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="286" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1576390048669">
+      <screen x="0" y="23" width="1366" height="745" />
     </state>
     <state x="286" y="194" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1576115203814" />
+    <state x="286" y="211" key="com.intellij.ide.util.TipDialog/0.23.1366.745@0.23.1366.745" timestamp="1576390048669" />
     <state x="447" y="264" width="668" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1575711156977">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

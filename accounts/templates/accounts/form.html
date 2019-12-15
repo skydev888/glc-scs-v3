@@ -1,20 +1,25 @@
 {% extends "base.html" %}
+{% load static %}
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">ユーザー情報編集form.html</li>
+{% endblock %}
 {% block content %}
-<h3>ユーザー情報編集：</h3>
-<h5>以下よりユーザー情報を編集して下さい。</h5>
+<div class="container">
+    <h1 style="color:royalblue">ユーザー情報編集</h1>
+<p>以下よりユーザー情報編集を行って下さい。</p>
 <form action="" method="POST">
     {{ form.non_field_errors }}
-    <table class="table">
+    <table class="table table-sm">
         <tbody>
-            {% for field in form %}
-                <tr>
-                    <th><label for="{{ field.id_for_label }}">{{ field.label }}</label></th>
-                    <td>{{ field }} {{ field.errors }}</td>
-                </tr>
-            {% endfor %}
+        {% for field in form %}
+            <tr>
+                <th><label for="{{ field.id_for_label }}">{{ field.label }}</label></th>
+                <td>{{ field }} {{ field.errors }}</td>
+            </tr>
+        {% endfor %}
         </tbody>
     </table>
     {% csrf_token %}
-    <button type="submit" class="btn btn-success btn-lg" >編集完了</button>
+    <button type="submit" class="btn btn-primary" >編集完了</button>
 </form>
 {% endblock %}

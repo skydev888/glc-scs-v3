@@ -1,0 +1,50 @@
+.top{
+    margin-bottom:30px;
+}
+.instruction-msg{
+    margin-top:20px;
+    margin-left:20px;
+}
+.user-info{
+    margin-top:20px;
+    margin-left:20px;
+}
+.my-footer{
+    display:block;
+    width:100%;
+    height:300px;
+    background-color:#3A5FCD;
+    text-align:center;
+    margin-top:80px;
+    padding-top:30px;
+    color:#fff;
+}
+.my-footer-company-name{
+    display:block;
+    width:90%;
+    height:50px;
+    background-color:#3A5FCD;
+    padding-top:10px;
+    margin:auto;
+    color:#D6D601;
+    font-size:200%;
+}
+.my-footer-info{
+    display:block;
+    width:90%;
+    height:50px;
+    background-color:#3A5FCD;
+    padding-top:30px;
+    margin:auto;
+    color:#fff;
+}
+.my-footer-copyrights{
+    display:block;
+    width:90%;
+    height:50px;
+    background-color:#3A5FCD;
+    padding-top:60px;
+    margin:auto;
+    color:#fff;
+    font-size:small;
+}

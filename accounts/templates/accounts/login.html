@@ -1,13 +1,19 @@
 {% extends "base.html" %}
 {% load bootstrap4 %}
+{% bootstrap_css %}
+{# Load CSS and JavaScript #}
+{% bootstrap_javascript %}
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Loginログイン</li>
+{% endblock %}
 
 {% block content %}
 <div class="container">
-    <h1>Login</h1>
+    <h1 style="color:royalblue">Login</h1>
     <form method="POST">
         {% csrf_token %}
         {% bootstrap_form form %}
-        <input type="submit" value="Login" class="btn btn-default">
+        <input type="submit" value="Login" class="btn btn-primary">
     </form>
 </div>
 {% endblock %}

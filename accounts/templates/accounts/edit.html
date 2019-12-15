@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 {% load bootstrap4 %}
-
+{% bootstrap_css %}
+{# Load CSS and JavaScript #}
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Edit編集</li>
+{% endblock %}
 {% block title %}
 ユーザー編集表示予定
 {% endblock title %}
 
 {% block content %}
-<h1>Home</h1>
+<h1 style="color:royalblue">Home</h1>
     <div class="row">
         <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}

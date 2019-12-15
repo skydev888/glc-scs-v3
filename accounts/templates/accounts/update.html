@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 {% load bootstrap4 %}
+{% bootstrap_css %}
+{# Load CSS and JavaScript #}
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Udpateアップデート</li>
+{% endblock %}
 
 {% block content %}
 <div class="container">
-  <h1>Update</h1>
+  <h1 style="color:royalblue">Update</h1>
   <div class="row">
     <div class="col-lg-6 col-md-8 col-sm-10">
 

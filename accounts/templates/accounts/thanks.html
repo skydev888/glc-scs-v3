@@ -1,4 +1,13 @@
 {% extends "base.html" %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{# Load CSS and JavaScript #}
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Thanksログアウト</li>
+{% endblock %}
 {% block content %}
-<p>・THANK YOU! SEE YOU AGAIN!</p>
+<div class="instruction-msg">
+  <h1 style="color:royalblue">THANK YOU!</h1>
+  <h1>See You Again!</h1>
+</div>
 {% endblock %}

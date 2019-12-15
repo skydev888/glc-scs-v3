@@ -1,6 +1,13 @@
 {% extends "base.html" %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{# Load CSS and JavaScript #}
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Detail詳細</li>
+{% endblock %}
 {% block content %}
-<h3>ユーザー詳細情報：</h3>
+<div class="container">
+    <h1 style="color:royalblue">ユーザー詳細情報</h1>
 <table class="table">
     <tbody>
         <tr>

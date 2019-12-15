@@ -1,6 +1,7 @@
 # SCS-version3.01    
 
 Implemented:  
--Heroku configuration  
--Base CRUD
--Googletrans
++ Heroku configuration  
++ Base CRUD  
++ Googletrans  
++ Bootstrap4

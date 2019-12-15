@@ -1,39 +1,90 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="ja">
+  <head>
     <meta charset="utf-8">
-    <title>SCS-version3.01</title>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}SCS-version3.03{% endblock %}</title>
+    <meta name="description" content="{% block description %}{% endblock %}">
 
-
+    <link rel="icon" href="{% static 'img/favicon.ico' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
 <body>
-    <div class="container">
-        <h1>SCS-version3.01</h1>
-        <nav class="navbar  mynav" role="navigation" id="navbar">
-        <hr>
-            <a class="navbar-brand mynav" href="{% url 'accounts:home' %}">HOME</a>
-        <hr>
-        </nav>
-        <div class="row">
-            <ul class="nav navbar-nav navbar-right">
+    <!-- ナビバー -->
+    <div class="top">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="{% url 'accounts:home' %}"><img src="/static/img/logo.png" width="60" height="50" alt="" style="color:#fff; margin-right:15px;";>SCS-Version3.03</a>
+            <ul class="nav nav-tabs justify-content-end">
                 {% if user.is_authenticated %}
-                      <li><a class="nav-item nav-link" href="{% url 'accounts:detail' user.pk %}">ユーザー情報表示</a></li>
-                      <li><a class="nav-item nav-link" href="{% url 'accounts:update' user.pk %}">ユーザー情報編集</a></li>
-
-                           <li><a href="{% url 'accounts:googletrans' %}" class="btn btn-simple">Google翻訳</a></li>
-                      <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">ログアウト</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'accounts:home' %}">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'accounts:detail' user.pk %}">ユーザー情報表示</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'accounts:update' user.pk %}">ユーザー情報編集</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'accounts:googletrans' %}">Google翻訳</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}">ログアウト</a></li>
                 {% else %}
-                      <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">ログイン</a></li>
-                      <li><a href="{% url 'accounts:signup' %}" class="btn btn-simple">新規ユーザー登録</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'accounts:home' %}">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}">ログイン</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'accounts:signup' %}">新規ユーザー登録</a></li>
                 {% endif %}
             </ul>
-        </div><hr>
+            <!-- disabled
+            <form class="form-inline pull-xs-right">
+                <input class="form-control" type="text" placeholder="Search">
+                <button class="btn btn-success-outline" type="submit">Search</button>
+            </form>
+            disabled-->
+        </nav>
+    </div>
 
+    <!-- メインコンテンツ（サイドバー＆データ） -->
+    <div class="container-fluid">
         <div class="row">
-            {% block content %}
-
-            {% endblock %}
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="#" class="list-group-item disabled" style="font-weight:bold; font-size:large;">GLC会社紹介</a>
+                    <a href="#" class="list-group-item">1_1 : 公式PDF会社概要</a>
+                    <a href="#" class="list-group-item">1_2 : 公式ホームページ</a>
+                    <a href="#" class="list-group-item">1_3 : 住所マップ</a>
+                </div>
+                <div class="list-group">
+                    <a href="#" class="list-group-item disabled" style="font-weight:bold; font-size:large;">TITP技能実習の流れ</a>
+                    <a href="#" class="list-group-item">2_1 : TITPって何？</a>
+                    <a href="#" class="list-group-item">2_2 : どの様な流れになるの？</a>
+                    <a href="#" class="list-group-item">2_3 : 費用は？</a>
+                    <a href="#" class="list-group-item">2_4 : 必要書類は？</a>
+                </div>
+                <div class="list-group">
+                    <a href="#" class="list-group-item disabled" style="font-weight:bold; font-size:large;">（参考）</a>
+                    <a href="#" class="list-group-item">3_1 : OTIT技能実習機構</a>
+                    <a href="#" class="list-group-item">3_2 : JITCO</a>
+                    <a href="#" class="list-group-item">3_3 : MOLISA</a>
+                    <a href="#" class="list-group-item">3_4 : DOLAB</a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                {% block content %}
+                {% endblock %}
+            </div>
         </div>
     </div>
+    <div class="my-footer">
+        <div class="my-footer-company-name">
+            <p>GLC GROUP 国際関係投資株式会社</p>
+        </div>
+        <div class="my-footer-info">
+            <p>教育施設：Viet Nam, Ha Noi市Nam Tu Liem郡My Dinh1区 Nguyen Co Thach通り68番号MD COMPLEXビル12A階<br>本社：Viet Nam, Ha Noi市Ha Dong郡Phuc La区Tan Xa,Xa La通り44番</p>
+        </div>
+        <div class="my-footer-info">
+            <p>www.glc.org.vn / info@glc.org.vn</p>
+        </div>
+        <div class="my-footer-copyrights">
+            <p>©︎All rights are protected by GLC Corporation.</p>
+        </div>
+    </div>
+
+
 </body>
 </html>
