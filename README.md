@@ -5,4 +5,4 @@ Implemented:
 + Base CRUD  
 + Googletrans  
 + Bootstrap4
-+ (file organized)
++ (file organized2)
