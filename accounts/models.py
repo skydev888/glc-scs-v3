@@ -9,8 +9,7 @@ class UserProfile(models.Model):
     username = models.CharField(max_length=100, blank=True, null=True)
     password1 = models.CharField(max_length=256, blank=True, null=True)
     password2 = models.CharField(max_length=256, blank=True, null=True)
-    password3 = models.CharField(max_length=256, blank=True, null=True)
-    phone = models.IntegerField(blank=True, null=True)
+    phone = models.CharField(max_length=30, blank=True, null=True)
 
     # 翻訳用
     username_jp = models.CharField(max_length=100, blank=True, null=True)

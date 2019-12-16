@@ -15,14 +15,8 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'so6bhbeu-#rjxh67zh*uetcxf#)-nc-oed&x!-c!#qav(r&h$='
 
-# SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
@@ -30,7 +24,6 @@ ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -88,11 +81,7 @@ DATABASES = {
 }
 
 
-
-
 # Password validation
-# https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -110,17 +99,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/2.0/topics/i18n/
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-
-
-
-# Add to test email:
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # Heroku: Update database configuration from $DATABASE_URL.
@@ -137,3 +120,11 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # Routing
 LOGIN_REDIRECT_URL = "accounts:home"
 LOGOUT_REDIRECT_URL = "accounts:thanks"
+
+# Send mail
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'vjdolayen@gmail.com'
+EMAIL_HOST_PASSWORD = 'Sunoffice2026'
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

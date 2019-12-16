@@ -10,12 +10,11 @@ class UserCreateForm(UserCreationForm):
         username = forms.CharField(max_length=130, required=True , label="Username")
         password1 = forms.CharField(widget=forms.PasswordInput(),label="Password")
         password2 = forms.CharField(widget=forms.PasswordInput(),label="Password(Confirm)")
-        password3 = forms.CharField(max_length=130, required=True , label="raw password")
-        phone = forms.IntegerField(label="Mobile phone number")
+        phone = forms.CharField(max_length=30, required=True , label="Phone number")
 
         class Meta:
             model = User
-            fields = ("username", "password1", "password2", "password3", "phone")
+            fields = ("username", "password1", "password2", "phone")
 
 
 # eidt form TEST
@@ -23,7 +22,7 @@ class UserUpdateForm(forms.ModelForm):
     """ユーザー情報更新フォーム"""
     class Meta:
         model = UserProfile
-        fields = ("password1", "password2", "password3", "phone")
+        fields = ("password1", "password2", "phone")
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
