@@ -13,8 +13,6 @@ from django.core.mail import send_mail
 
 
 
-
-
 # ユーザーモデルセット
 User = get_user_model()
 
@@ -73,11 +71,10 @@ def signup(request):
     return render(request, 'accounts/signup.html', {'form': form})
 
 
-
-
-
-#一覧
 def index(request):
+    """
+    ユーザー一覧表示
+    """
     members = UserProfile.objects.all().order_by('id')
     return render(request, 'accounts/index.html', {'members':members})
 
@@ -126,8 +123,10 @@ class UserUpdate(OnlyYouMixin, generic.UpdateView):
 
 
 
-# 削除
 def delete(request, id):
+    """
+    ユーザー削除
+    """
     # return HttpResponse("削除")
     member = get_object_or_404(UserProfile, pk=id)
     member.delete()
@@ -135,16 +134,10 @@ def delete(request, id):
 
 
 
-
-
-
-
-
 def googletrans(request):
     """
     Googletrans翻訳  method
     """
-
     translator = Translator()
     translated = translator.translate('Bastian Schweinsteiger', src='de', dest='ja')
     d = {
