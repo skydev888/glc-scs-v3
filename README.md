@@ -8,6 +8,7 @@ Implemented:
 + (file organized2)
 + Top page
 + Top page - photos
++ Google analytics https://www.yamatofinancial.jp/learning/know-how/googleanlytics-setting-startup.html
 
 
 ///////////
