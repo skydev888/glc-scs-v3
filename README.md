@@ -6,3 +6,6 @@ Implemented:
 + Googletrans  
 + Bootstrap4
 + (file organized2)
+
+////Later add
+Excel transcribe

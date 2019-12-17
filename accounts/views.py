@@ -17,6 +17,14 @@ from django.core.mail import send_mail
 User = get_user_model()
 
 
+class TopPage(TemplateView):
+    """
+    TOPページ
+    """
+    template_name = 'accounts/top.html'
+
+
+
 class Thanks(TemplateView):
     """
     サンクスページ

@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TOP PAGE SCS-version3.03</title>
+    <meta name="description" content="{% block description %}{% endblock %}">
+
+    <link rel="icon" href="{% static 'img/favicon.ico' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+<body>
+    <!-- ナビバー -->
+    <div class="top">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="{% url 'accounts:home' %}"><img src="/static/img/logo.png" width="60" height="50" alt="" style="color:#fff; margin-right:15px;";>日本でスキルアップしよう！登録はこちらから！</a>
+            <ul class="nav nav-tabs justify-content-end">
+                <li class="nav-item"><a class="nav-link" href="{% url 'accounts:signup' %}">新規ユーザー登録</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- メインコンテンツ（サイドバー＆データ） -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <p>HERE IS RULERING PAGE.</p>
+                <p>HERE IS RULERING PAGE.</p>
+                <p>HERE IS RULERING PAGE.</p>
+                <p>HERE IS RULERING PAGE.</p>
+                <div class="col-md-12">
+                    <ul class="nav nav-tabs justify-content-start">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:signup' %}">ここから登録しよう！！</a></li>
+                    </ul>
+                </div>
+                <p>HERE IS RULERING PAGE.</p>
+                <p>HERE IS RULERING PAGE.</p>
+                <p>HERE IS RULERING PAGE.</p>
+                <p>HERE IS RULERING PAGE.</p>
+                <p>HERE IS RULERING PAGE.</p>
+                <div class="col-md-12">
+                    <ul class="nav nav-tabs justify-content-start">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:signup' %}">ここから登録しよう！！</a></li>
+                    </ul>
+                </div>
+                <p>HERE IS RULERING PAGE.</p>
+                <p>HERE IS RULERING PAGE.</p>
+                <p>HERE IS RULERING PAGE.</p>
+                <p>HERE IS RULERING PAGE.</p>
+                <div class="col-md-12">
+                    <ul class="nav nav-tabs justify-content-start">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:signup' %}">ここから登録しよう！！</a></li>
+                    </ul>
+                </div>
+                <p>HERE IS RULERING PAGE.</p>
+                <p>HERE IS RULERING PAGE.</p>
+                <p>HERE IS RULERING PAGE.</p>
+                <p>HERE IS RULERING PAGE.</p>
+                <div class="col-md-12">
+                    <ul class="nav nav-tabs justify-content-start">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:signup' %}">ここから登録しよう！！</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer col-md-12">
+        <div class="footer-text">
+            <p style="font-size:150%;">GLC GROUP 国際関係投資株式会社</p>
+            <p>教育施設：Viet Nam, Ha Noi市Nam Tu Liem郡My Dinh1区 Nguyen Co Thach通り68番号MD COMPLEXビル12A階<br>本社：Viet Nam, Ha Noi市Ha Dong郡Phuc La区Tan Xa,Xa La通り44番</p>
+            <p>www.glc.org.vn / info@glc.org.vn</p>
+            <p>©︎All rights are protected by GLC Corporation.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
