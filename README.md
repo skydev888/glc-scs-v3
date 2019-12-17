@@ -7,6 +7,11 @@ Implemented:
 + Bootstrap4
 + (file organized2)
 + Top page
++ Top page - photos
 
-////Later add
-Excel transcribe
+
+///////////
+Later add
+///////////
+- Excel transcribe
+- Session observing
