@@ -6,6 +6,7 @@ Implemented:
 + Googletrans  
 + Bootstrap4
 + (file organized2)
++ Top page
 
 ////Later add
 Excel transcribe
